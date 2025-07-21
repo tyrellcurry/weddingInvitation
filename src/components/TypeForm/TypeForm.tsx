@@ -15,7 +15,7 @@ const TypeForm = () => {
         console.log("form ready");
       }}
     >
-      <Button bg="#ff7cd8">Click to RSVP</Button>
+      <Button bg="#ff7cd8">Click here to RSVP ✨</Button>
     </PopupButton>
   );
 };

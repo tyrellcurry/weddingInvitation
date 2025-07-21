@@ -5,7 +5,16 @@ interface TabPageProps {
 
 const TabPage = ({ children }: TabPageProps) => {
   return (
-    <Tabs.Root defaultValue="tab1" variant="plain" fitted>
+    <Tabs.Root
+      defaultValue="tab1"
+      margin="auto"
+      maxW={1000}
+      variant="plain"
+      lg={{
+        marginTop: "2rem",
+      }}
+      fitted
+    >
       <Tabs.List bg="bg.muted" p="1" rounded="l3">
         <Tabs.Trigger value="tab1">Ceremony</Tabs.Trigger>
         <Tabs.Trigger value="tab2">Reception</Tabs.Trigger>

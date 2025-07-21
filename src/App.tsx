@@ -1,12 +1,4 @@
-import {
-  Box,
-  Center,
-  Heading,
-  Image,
-  Link,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Center, Heading, Image, Link, Text } from "@chakra-ui/react";
 
 import FadeInBox from "./components/FadeInBox/FadeInBox";
 import TabContent from "./components/TabPage/TabContent";
@@ -30,21 +22,22 @@ function App() {
   return (
     <Box>
       <FadeInBox delay={0.5} duration={3.5}>
-        <Box>
+        <Box mb={2}>
           <Center>
             <Image maxW={400} src="images/intro-t-l.png" w="80%" />
           </Center>
         </Box>
       </FadeInBox>
       <Box as={"main"} p={6}>
-        <Stack mb={4}>
+        <Box mb={6}>
           {!!invitees && (
             <FadeInBox delay={2.5} duration={3}>
               <Heading
                 as="h2"
                 color="#9b8f96"
                 fontFamily="Libre Caslon Text"
-                mb={4}
+                lg={{ marginTop: "1rem", fontSize: "2rem", lineHeight: "auto" }}
+                mb={5}
                 size="xl"
                 textAlign="center"
               >
@@ -54,7 +47,7 @@ function App() {
               </Heading>
             </FadeInBox>
           )}
-          <FadeInBox delay={4.25} duration={3}>
+          <FadeInBox delay={invitees ? 4.25 : 2.5} duration={3}>
             <Heading
               as="h1"
               color="#c198bc"
@@ -62,21 +55,33 @@ function App() {
               mb={4}
               size="4xl"
               textAlign="center"
+              lg={{
+                marginTop: "1rem",
+                fontSize: "2.25rem",
+                lineHeight: "auto",
+              }}
             >
               Luanna & Ty's Wedding
             </Heading>
-            <Heading as="h2" fontWeight={400} size="md" textAlign="center">
+            <Text fontStyle="italic" fontWeight={300} textAlign="center">
               06/20/2026
-            </Heading>
+            </Text>
           </FadeInBox>
-        </Stack>
-        <FadeInBox delay={6} duration={2}>
+        </Box>
+        <FadeInBox delay={invitees ? 6 : 4.5} duration={2}>
           {!!invitees && (
-            <Center>
+            <Center
+              lg={{
+                marginTop: "1.5rem",
+              }}
+            >
               <TypeForm />
             </Center>
           )}
-          <Box mt={8}>
+          <Box mt={6}>
+            <Text lg={{ display: "none" }} mb={4} textAlign="center">
+              👇 Click to view details 👇
+            </Text>
             <TabPage>
               <TabContent value="tab1">
                 <Heading fontFamily="Libre Caslon Text" mb={2} size="3xl">
@@ -96,7 +101,7 @@ function App() {
                   </Link>
                 </Text>
                 <Link href="/images/map.png">
-                  <Image src="/images/map.png" />
+                  <Image mt={2} src="/images/map.png" />
                 </Link>
                 <Text fontSize={12}>
                   Enterance and ceremony location highlighted in red
@@ -113,12 +118,11 @@ function App() {
                 <Link
                   color="blue"
                   href="https://maps.app.goo.gl/T2MoQQ8BNs382Dzf9"
-                  mb={2}
                   target="_blank"
                 >
                   The Arbutus Club, Vancouver, BC
                 </Link>
-                <Image src="/images/arbutus.gif" />
+                <Image mt={2} src="/images/arbutus.gif" />
               </TabContent>
             </TabPage>
           </Box>
