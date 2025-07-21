@@ -6,8 +6,7 @@ interface FadeInBoxProps {
   children: React.ReactNode;
 }
 const FadeInBox = ({ duration, delay, children }: FadeInBoxProps) => {
-  const debug = true;
-  if (debug) {
+  if (import.meta.env.VITE_DEBUG == "true") {
     duration = 0;
     delay = 0;
   }
