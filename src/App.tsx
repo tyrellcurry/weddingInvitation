@@ -20,7 +20,7 @@ function App() {
     });
 
   return (
-    <Box>
+    <Box as="main" mb={20}>
       <FadeInBox delay={0.5} duration={3.5}>
         <Box mb={2}>
           <Center>
